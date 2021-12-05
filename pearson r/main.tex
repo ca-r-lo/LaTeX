@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+    \begin{center}
+        p = sum of $XY$, d = sum of $X^2$, w = sum of $Y^2$
+    \end{center}
+    \begin{align*}
+        r&=\frac{p-n(\overline{x})(\overline{y})}{\sqrt{(d-n(\overline{x})^2)(w-n(\overline{y})^2)}}\\
+        r&=\frac{15282-5(35.2)(86)}{\sqrt{(7016-5(35.2)^2)(37020-5(86)^2)}}\\
+        r&=\frac{146}{\sqrt{(820)(40)}}\\
+        r&=\frac{146}{181.1960264}\\
+        r&= 0.805757183
+    \end{align*}
+    \begin{align*}
+        t&=r\cdot \sqrt{\frac{n-2}{1-r^2}}\\
+        t&=.81\cdot \sqrt{\frac{5-2}{1-.81^2}}\\
+        t&=.81\cdot \sqrt{8.723466124}\\
+        t&=.81\cdot 2.953551443\\
+        t&=2.392376668
+    \end{align*}
+    \begin{center}
+        d = sum of $D^2$
+    \end{center}
+    \begin{align*}
+        \rho&=1-\frac{6(d)}{n(n^2-1)}\\
+        \rho&=1-\frac{6(2)}{5(5^2-1)}\\
+        \rho&=1-\frac{12}{120}\\ 
+        \rho&=1-0.1\\
+        \rho&=0.9
+    \end{align*}
+\end{document}
