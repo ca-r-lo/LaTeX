@@ -3,3 +3,5 @@
 *.log
 *.gz
 *.fdb_latexmk
+*.md5
+*.auxlock
