@@ -1,5 +1,306 @@
 \documentclass{article}
+% \usepackage[showframe=true]{geometry}
+\usepackage{changepage}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amsmath}
+% \usepackage{multicol}
+% \usepackage{lipsum}
 \begin{document}
-    Hello
-\end{document}
+    \pagenumbering{gobble}
+    \section*{Pearson, r}
+    \begin{center}
+        A study is conducted to determine the relationship regarding teachers' age and teaching efficiency.
+    \end{center} 
+    Specific Problem: Is there a significant relationship regarding teachers' age and teaching efficiency?\\\\
+    Hypothesis: \\
+    -\hspace{1cm} $H_0$: There is no significant relationship regarding teachers' age and teaching efficiency.\\
+    -\hspace{1cm} $H_0$: There is significant relationship regarding teachers' age and teaching efficiency.\\\\\\
+    Statistical Test: Pearson, r\\\\\\
+    Type of Measurement Data: Interval Scale and Ratio Scale.\\\\\\
+    Level of Significance: 0.5\\\\\\
+    \begin{figure*}[ht!]
+        \begin{equation}
+            a. r=\frac{\sum xy-n(\overline{x})(\overline{y})}{\sqrt{\bigl(\sum x^2-n(\overline{x})^2\bigr)\bigl(\sum y^2-n(\overline{y})^2\bigr)}}
+        \end{equation}
+        \begin{equation}
+            b. r=\frac{n(\sum xy)-(\sum x)(\sum y)}{\sqrt{\bigl(n(\sum x^2)-(\sum x)^2\bigr)\bigl(n(\sum y^2)-(\sum y)^2\bigr)}}
+        \end{equation}
+        \caption{Formulas for Pearson, r}
+    \end{figure*}
+    \newpage
+    \begin{figure}
+        \begin{adjustwidth}{-1cm}{}
+            \begin{tabular}{cccccc}
+                Teacher&Age&Efficiency\\
+                &$x$&$y$&$x^2$&$y^2$&$xy$\\
+                A & 51 & 89 & 2601 & 7921 & 4539 \\
+                B & 52 & 97 & 2704 & 9409 & 5044 \\
+                C & 32 & 81 & 1024 & 6561 & 2592 \\
+                D & 23 & 88 & 529 & 7744 & 2024 \\
+                E & 37 & 84 & 1369 & 7056 & 3108 \\
+                F & 46 & 78 & 2116 & 6084 & 3588 \\
+                G & 51 & 99 & 2601 & 9801 & 5049 \\
+                H & 47 & 79 & 2209 & 6241 & 3713 \\
+                I & 58 & 75 & 3364 & 5625 & 4350 \\
+                J & 52 & 90 & 2704 & 8100 & 4680 \\
+                K & 24 & 91 & 576 & 8281 & 2184 \\
+                L & 27 & 92 & 729 & 8464 & 2484 \\
+                M & 35 & 86 & 1225 & 7396 & 3010 \\
+                N & 57 & 85 & 3249 & 7225 & 4845 \\
+                O & 56 & 75 & 3136 & 5625 & 4200 \\
+                $n=15$&$\sum x=648$&$\sum y=1289$&$\sum x^2=30136$&$\sum y^2=111533$&$\sum xy=55410$\\
+                &$\overline{x}=43.2$&$\overline{y}=85.933$
+            \end{tabular}
+            \caption{\label{fig:text}Pearson, r Given Data}
+        \end{adjustwidth}
+    \end{figure}
+    
 
+    
+    \begin{align*}
+        a. r&=\frac{55410-15(43.2)(85.933)}{\sqrt{\bigl(30136-15(43.2)^2\bigr)\bigl(111533-15(85.93333333)^2\bigr)}}\\
+        a.r&=\frac{-274.584}{\sqrt{1640634.205}}\\
+        a.r&=\frac{-274.584}{1280.872439}\\
+        a.r&=-0.214464892
+    \end{align*}
+    \clearpage
+    \begin{align*}
+        b.r&=\frac{15(55410)-(648)(1289)}{\sqrt{\bigl(15(30136)-(648)^2\bigr)\bigl(15(111533)-(1289)^2\bigr)}}\\
+        b.r&=\frac{-4122}{\sqrt{368728464}}\\
+        b.r&=\frac{-4122}{19202.30361}\\
+        b.r&=-0.214661744
+    \end{align*}
+    after solving the value of r by using the two formulas, the resulting \emph{computed r} is,
+    \begin{center}
+        $c.r\approx-0.214$
+    \end{center}
+    locating the \emph{table value r} at 0.05 level of sinificance and at
+    % \begin{center}
+        $df=n-2=15-2=13$
+    % \end{center}
+    degrees of freedom. The \emph{table value r} is
+    \begin{center}
+        $t.r=0.514$
+    \end{center}
+    Since the absolute value of the \emph{computed r} is less than the \emph{table value r}, 
+    \begin{center}
+        $|c.r\approx-0.214|<t.r=0.514$
+    \end{center}
+    there is no significant relationship. 
+    Therefore the null hypothesis is accepted. This implies that age has no effect upon teaching effectiveness in this study.
+    
+    \newpage
+    \section*{T-test(Independent and Uncorrelated Samples)}
+    \begin{center}
+        A researcher wishes to know whether male and female students differ in their mathemiatical abilities.
+        He administered a mathematics aptitude test to 20 male and 22 female stdents in a class.
+    \end{center}
+    Specific Problem: Do male and female differ in their mathematical abilities?\\\\\\
+    Hypothesis:\\
+    -\hspace{1cm} $H_0$: Male and Female do not differ in their mathematical abilities.\\
+    -\hspace{1cm} $H_1$: Male and Female differ in their mathematical abilities.\\\\
+    Statistical Test: T-test for independent and uncorrelated samples. Type of data is interval.\\\\
+    Level of Significance: 0.05\\
+    \begin{figure*}[ht!]
+        \begin{equation}
+            SS=\sum x^2-\frac{(\sum x)^2}{n}
+        \end{equation}
+        \caption{Formula for \emph{sum of squares}}
+    \end{figure*}
+    \begin{figure*}[ht!]
+        \begin{equation}
+            t=\frac{\overline{x}-\overline{y}}{\sqrt{\frac{SS_x+SS_y}{n_x+n_y-2}\bigl[\frac{1}{n_x}+\frac{1}{n_y}\bigr]}}
+        \end{equation}
+        \caption{Formula for T-test}
+    \end{figure*}
+    \newpage
+    \begin{figure}
+        \begin{center}
+            \begin{tabular}{cccc}
+                Male&Female\\
+                $x$&$y$&$x^2$&$y^2$\\
+                98 & 97 & 9604 & 9409 \\
+                81 & 95 & 6561 & 9025 \\
+                75 & 81 & 5625 & 6561 \\
+                95 & 80 & 9025 & 6400 \\
+                94 & 78 & 8836 & 6084 \\
+                78 & 80 & 6084 & 6400 \\
+                86 & 98 & 7396 & 9604 \\
+                79 & 92 & 6241 & 8464 \\
+                90 & 91 & 8100 & 8281 \\
+                100 & 99 & 10000 & 9801 \\
+                78 & 84 & 6084 & 7056 \\
+                81 & 88 & 6561 & 7744 \\
+                76 & 80 & 5776 & 6400 \\
+                77 & 78 & 5929 & 6084 \\
+                89 & 80 & 7921 & 6400 \\
+                80 & 100 & 6400 & 10000 \\
+                87 & 98 & 7569 & 9604 \\
+                97 & 84 & 9409 & 7056 \\
+                76 & 94 & 5776 & 8836 \\
+                81 & 88 & 6561 & 7744 \\
+                78 & 99 & 6084 & 9801 \\
+                85 & 100 & 7225 & 10000 \\
+                $\sum x=2129$ & 86 & $\sum x^2=182933$ & 7396 \\
+                $n_x=22$ & 97 &  & 9409 \\
+                $\overline{x}=96.77272727$ & 92 &  & 8464 \\
+                 &$\sum y=2239$&&$\sum y^2=202023$\\
+                 &$n_y=25$\\
+                 &$\overline{y}=89.56$
+            \end{tabular}
+        \end{center}
+        \caption{Data for T-test}
+    \end{figure}
+    
+    \clearpage
+    \noindent
+    SS for male group:
+    \begin{center}
+        \begin{align*}
+            SS_x&=\sum x^2 - \frac{(\sum x)^2}{n_x}\\
+            SS_x&=182933 - \frac{(2129)^2}{22}\\
+            SS_x&=|-23096.13636|
+        \end{align*}
+    \end{center}
+    SS for female group:
+    \begin{center}
+        \begin{align*}
+            SS_y&=\sum y^2 - \frac{(\sum y)^2}{n_y}\\
+            SS_y&=202023 - \frac{(2239)^2}{25}\\
+            SS_y&=1498.16
+        \end{align*}
+    \end{center}
+    Compute the T-test,
+    \begin{center}
+        \begin{align*}
+            t&=\frac{96.77272727-89.56}{\sqrt{\frac{23096.13636+1498.16}{22+25-2}\bigl[\frac{1}{22}+\frac{1}{25}\bigr]}}\\
+            t&=\frac{7.21272727}{\sqrt{546.5399191(0.085454545)}}\\
+            t&=\frac{7.21272727}{\sqrt{46.70432011}}\\
+            t&=\frac{7.21272727}{6.834055905}\\
+            t&=1.055409463
+        \end{align*}
+    \end{center}
+    The computed value of t is,
+    \begin{center}
+        $t=1.055409463$
+    \end{center}
+    The table value of t at 0.05 level of significance and $df=n_x+n_y-2=22+25-2=45$ degrees of freedom,
+    \begin{center}
+        $t=2.0141$
+    \end{center}
+    Since the computed value of t is less than the table value of t,
+    \begin{center}
+        $t=1.055409463<t=2.0141$
+    \end{center}
+    The researcher fail to reject the null hypothesis. Therefore in this study, Male and Female students do not differ in their mathematical abilities.
+
+    \newpage
+    \section*{Z-TEST}
+    \noindent
+    A researcher wishes to know whether Male and Female students differ on their science test scores.\\\\
+    Specific Problem: Is there a significant difference between Male and Female students on their science test scores?\\\\
+    Hypothesis:\\
+    -\hspace{1cm} $H_0$: There is no significant difference between Male and Female students on their science test scores.\\
+    -\hspace{1cm} $H_1$: There is significant difference between Male and Female students on their science test scores.\\\\
+    Refer to next page at Figure 8 for the given data.
+    \begin{figure*}[ht!]
+        \begin{equation}
+            SD=\sqrt{\frac{\sum x^2-((\sum x)^2/n)}{n}}
+        \end{equation}
+        \caption{Formula for SD}
+    \end{figure*}
+    \begin{figure*}[ht!]
+        \begin{equation}
+            Z=\frac{\overline{x}-\overline{y}}{\sqrt{\frac{S_x^2}{n_x}+\frac{S_y^2}{n_y}}}
+        \end{equation}
+        \caption{Formula for Z-Test}
+    \end{figure*}
+    \newpage
+    \begin{figure}
+        \begin{center}
+            \begin{tabular}{cccc}
+                $x$&$y$&$x^2$&$y^2$\\
+                100 & 78 & 10000 & 6084 \\
+                78 & 100 & 6084 & 10000 \\
+                97 & 89 & 9409 & 7921 \\
+                85 & 92 & 7225 & 8464 \\
+                93 & 99 & 8649 & 9801 \\
+                99 & 88 & 9801 & 7744 \\
+                84 & 82 & 7056 & 6724 \\
+                92 & 91 & 8464 & 8281 \\
+                100 & 98 & 10000 & 9604 \\
+                97 & 97 & 9409 & 9409 \\
+                77 & 90 & 5929 & 8100 \\
+                80 & 80 & 6400 & 6400 \\
+                75 & 81 & 5625 & 6561 \\
+                85 & 88 & 7225 & 7744 \\
+                80 & 90 & 6400 & 8100 \\
+                87 & 96 & 7569 & 9216 \\
+                80 & 77 & 6400 & 5929 \\
+                91 & 91 & 8281 & 8281 \\
+                93 & 76 & 8649 & 5776 \\
+                87 & 86 & 7569 & 7396 \\
+                81 & 75 & 6561 & 5625 \\
+                83 & 76 & 6889 & 5776 \\
+                100 & 76 & 10000 & 5776 \\
+                76 & 92 & 5776 & 8464 \\
+                96 & 76 & 9216 & 5776 \\
+                89 & 84 & 7921 & 7056 \\
+                95 & 94 & 9025 & 8836 \\
+                81 & 97 & 6561 & 9409 \\
+                94 & 76 & 8836 & 5776 \\
+                100 & 82 & 10000 & 6724 \\
+                95 & 89 & 9025 & 7921 \\
+                95 & 99 & 9025 & 9801 \\
+                99 & 77 & 9801 & 5929 \\
+                98 & 92 & 9604 & 8464 \\
+                77 & 90 & 5929 & 8100 \\
+                $n_x=35$& $n_y=35$ &$\sum x^2=280313$&$\sum y^2=266968$\\
+                $\sum x=2946$& $\sum y=2965$ \\
+                $\overline{x}=92.0625$ & $\overline{y}=95.64516129$ \\
+                 &  \\
+            \end{tabular}
+        \end{center}
+        \caption{Data for Z-Test}
+    \end{figure}
+    \clearpage
+    \noindent
+    Calculate the SD for group x,
+    \begin{center}
+        \begin{align*}
+            SD&=\sqrt{\frac{280313-((2946)^2/35)}{35}}\\
+            SD&=\sqrt{\frac{32343.97143}{35}}\\
+            SD&=\sqrt{924.1134694}\\
+            SD&=30.39923468
+        \end{align*}
+    \end{center}
+    Calculate the SD for group y,
+    \begin{center}
+        \begin{align*}
+            SD&=\sqrt{\frac{266968-((2965)^2/35)}{35}}\\
+            SD&=\sqrt{\frac{15790.14286}{35}}\\
+            SD&=\sqrt{451.1469388}\\
+            SD&=21.24021984
+        \end{align*}
+    \end{center}
+    Solve for Z,
+    \begin{center}
+        \begin{align*}
+            Z&=\frac{92.0625-95.64516129}{\sqrt{\frac{30.39923468}{35}+\frac{21.24021984}{35}}}\\
+            Z&=\frac{-3.5826692}{\sqrt{0.868549562+0.606863424}}\\
+            Z&=\frac{-3.5826692}{1.214665792}\\
+            Z&=-2.949510082
+        \end{align*}
+    \end{center}
+    Since the Z is 
+    \begin{center}
+        $Z=-2.949510082$
+    \end{center}
+    and greater than our critical value
+    \begin{center}
+        $Z=-2.949510082<\pm 1.960$
+    \end{center}
+    The researcher succesfully rejected the null hypothesis, meaning that in this study,
+    there is significant difference between Male and Female students on their science test scores.
+\end{document}
