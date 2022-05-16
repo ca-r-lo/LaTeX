@@ -8,6 +8,7 @@
 *.run
 *.md5
 *.auxlock
-
+*.blg
+*.xml
 
 
