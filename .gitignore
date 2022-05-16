@@ -3,7 +3,9 @@
 *.log
 *.gz
 *.fdb_latexmk
-
+*.bcf
+*.bbl
+*.run
 *.md5
 *.auxlock
 
